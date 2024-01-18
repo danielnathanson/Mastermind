@@ -16,7 +16,7 @@ def main():
     print(f"The secret code is {possibilities.pop()}")
 
 def get_new_possible(guess, actual_black, actual_white, old_possibilities):
-    #checking whether each possiblity is consistent with the information in the black and white pins on the guess
+    #checking whether each possibility is consistent with the information in the black and white pins on the guess
     new_pos = set()
     for old_pos in old_possibilities:
         expected_black = 0
@@ -31,7 +31,7 @@ def get_new_possible(guess, actual_black, actual_white, old_possibilities):
                 expected_black += 1
                 old_count[g] -= 1
                 modo_guess[i] = 'x'
-        #getting the expected black for "guess" if "old_pos" is truly the secret code
+        #getting the expected white for "guess" if "old_pos" is truly the secret code
         for i in range(SECRET_LEN):
             g = modo_guess[i]
             if old_count.get(g, 0) > 0:
